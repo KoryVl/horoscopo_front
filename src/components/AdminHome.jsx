@@ -36,7 +36,7 @@ function AdminHome({user}){
         }
     
         // Realiza la solicitud fetch solo si "hola" no está en el texto
-        fetch(`http://localhost:4000/v1/signos/${signoEditar}`, {
+        fetch(`https://horoscopo-back-six.vercel.app/${signoEditar}`, {
             method: 'PATCH',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({"textoEditar": textoEditar})
@@ -53,7 +53,7 @@ function AdminHome({user}){
     }
 
     return (
-        <div class="container">
+        <div className="container">
             <h2 id="textoAdmin">Edita un Signo Zodiacal</h2>
             <select id="editSignos" onClick={handleSelect}>
                 <option value="0">Seleciona un signo zodiacal</option>
